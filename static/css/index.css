@@ -1,0 +1,66 @@
+.div-grid {
+    gap: 5rem;
+    padding: 10px;
+    min-width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid var(--white);
+    border-radius: 25px;
+}
+
+.div-login-log {
+    width: 250px;
+    height: 250px;
+    background-image: url('../../data/imgs/Logo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.form-display {
+    gap: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    
+}
+
+
+.login,
+.signup {
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 2%;
+    padding: 15px;
+    box-shadow: 0 0 10px var(--secondary);
+}
+
+
+#login-form,
+#signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+#login-form label, #signup-form label {
+    padding: 5px;
+    background-color: var(--primary);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 75px;
+}
+
+#login-form input, #signup-form input {
+    padding: 2px;
+    border: 3px solid ;
+    background-color: var(--main);
+
+}

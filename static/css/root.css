@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --main: gold;
+    --primary: greenyellow;
+    --secondary: brown;
+
+    --black: black;
+    --white: white;
+    --test: lime;
+    --error: red;
+}
+
+/*
+ * Body
+ *
+ =========================*/
+
+body {
+    margin-top: 5em;
+    margin-bottom: 5em;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--main);
+    color: var(--black);
+}
+
+
+/*
+ * Navigation set up
+ */
+
+nav {
+    top: 0;
+    position: fixed;
+}
+/*
+ * Basics such as
+ * 
+ * @h1,h2, a, buttons...
+ *
+ ========================================*/
+
+button {
+    padding: 5px;
+    font-weight: bold;
+}
+
+button:hover {
+    color: var(--white);
+    background-color: var(--black);
+}
+
+a {
+    text-decoration: none;
+    font-size: 30px;
+    color: red;
+}
+
+/*
+ * HEADER
+ *
+ ========================================*/
+
+header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--white);
+    top: 0;
+    position: fixed;
+}
+
+/*
+ * Footer 
+ *
+ ========================================*/
+
+
+footer {
+
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--white);
+    bottom: 0;
+    position: fixed;
+}
+
+
+
+/*
+ * Screen Setup
+ *
+ */
+
+
+ @media (min-width: 500px) {
+    body {
+        background-image: url('../../data/imgs/logo2.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;   
+    }
+
+    .div-login-log {
+        display: none;
+    }
+
+    .div-grid {
+        background-color: var(--primary);
+    }
+}
+
+
+@media (max-width: 500px) {
+    body {
+        background-color: var(--primary);
+    }
+ }

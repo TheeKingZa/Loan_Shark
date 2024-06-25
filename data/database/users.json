@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1,
+      "username": "TheeKingZa",
+      "email": "proceedingmc@gmail.com",
+      "password": "1234567",
+      "user_type": "admin",
+      "profile": {
+        "first_name": "Pule",
+        "last_name": "Mathikha",
+        "date_of_birth": "1995-05-20"
+      },
+      "permissions": ["manage_users", "edit_content", "view_reports"]
+    },
+    {
+      "id": 2,
+      "username": "basic_user1",
+      "email": "user1@example.com",
+      "password": "user123",
+      "user_type": "basic_user",
+      "profile": {
+        "first_name": "Bob",
+        "last_name": "Johnson",
+        "date_of_birth": "1990-05-15"
+      },
+      "permissions": ["view_content"]
+    },
+    {
+      "id": 3,
+      "username": "Owner",
+      "email": "premium1@example.com",
+      "password": "premium123",
+      "user_type": "premium_user",
+      "profile": {
+        "first_name": "Charlie",
+        "last_name": "Brown",
+        "date_of_birth": "1985-07-22"
+      },
+      "permissions": ["view_content", "access_premium_features"]
+    }
+]

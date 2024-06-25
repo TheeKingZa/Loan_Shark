@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/root.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <title>Home</title>
+</head>
+<body>
+  <p class="acc-type">Account type: <span id="user-type"></span></p> 
+    <nav id="content">
+       <ul>
+          <li><a href="home.html">Home</a></li>
+          <!-- Link to dummy.html only available for premium users -->
+          <li id="dummy-link" style="display: none;"><a href="dummy.html">Dummy Page</a></li>
+          <!-- Add more navigation links here -->
+          <a href="#" id="logout-button">Logout</a>
+
+        </ul>
+      </nav>
+
+
+      <main>
+        <section>
+          <h1>Welcome!</h1>
+        </section>
+      </main>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+        const userTypeSpan = document.getElementById('user-type');
+        const dummyLink = document.getElementById('dummy-link');
+  
+        if (loggedInUser) {
+          userTypeSpan.textContent = loggedInUser.userType;
+          // Show link to dummy.html only for premium users
+          if (loggedInUser.userType === 'premium_user' || loggedInUser.userType === 'admin') {
+            dummyLink.style.display = 'list-item';
+          }
+        } else {
+          // If no user is logged in, redirect to the login/signup page
+          window.location.href = '../../index.html';
+        }
+    });
+  </script>
+
+  <script src="../js/logout.js"></script>
+</body>
+</html>

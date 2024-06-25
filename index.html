@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./static/css/root.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <title>Login or Signup</title>
+</head>
+<body>
+
+  <header>
+    <a href="./static/html/home.html">Welcome to my App</a>
+  </header>
+
+<div class="div-grid">
+
+  <div class="div-login-log">
+
+  </div>
+
+  <div class="form-display">
+<div class="login">
+  <h1>Login</h1>
+  <form id="login-form">
+    <label for="login-username">Username:</label>
+    <input type="text" id="login-username" name="username" required>
+    <br>
+    <label for="login-password">Password:</label>
+    <input type="password" id="login-password" name="password" required>
+    <br>
+    <button type="submit">Login</button>
+  </form>
+</div>
+<div class="signup">
+  <h1>Signup</h1>
+  <form id="signup-form">
+    <label for="signup-username">Username:</label>
+    <input type="text" id="signup-username" name="username" required>
+    <br>
+    <label for="signup-email">Email:</label>
+    <input type="email" id="signup-email" name="email" required>
+    <br>
+    <label for="signup-password">Password:</label>
+    <input type="password" id="signup-password" name="password" required>
+    <br>
+    <button type="submit">Signup</button>
+  </form>
+</div>
+</div>
+</div>
+
+
+
+
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const username = document.getElementById('login-username').value;
+      const password = document.getElementById('login-password').value;
+
+      // Fetch users data from users.json
+      fetch('data/database/users.json')
+        .then(response => response.json())
+        .then(users => {
+          const user = users.find(user => user.username === username && user.password === password);
+          console.log(users);
+          if (user) {
+            localStorage.setItem('loggedInUser', JSON.stringify({ username: user.username, userType: user.user_type }));
+            window.location.href = '../static/html/home.html';
+          } else {
+            alert('Invalid username or password');
+          }
+        })
+        .catch(error => console.error('Error fetching users data:', error));
+    });
+
+    document.getElementById('signup-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const username = document.getElementById('signup-username').value;
+      const email = document.getElementById('signup-email').value;
+      const password = document.getElementById('signup-password').value;
+      const userType = document.getElementById('signup-user-type').value;
+
+      // Fetch users data from users.json
+      fetch('data/database/users.json')
+        .then(response => response.json())
+        .then(users => {
+          // Check if username already exists
+          const existingUser = users.find(user => user.username === username);
+          if (existingUser) {
+            alert('Username already exists. Please choose another one.');
+          } else {
+            // Create new user object
+            const newUser = {
+              username: username,
+              email: email,
+              password: password,
+              user_type: userType
+            };
+            // Add new user to users array
+            users.push(newUser);
+            // Save updated users data back to users.json
+            localStorage.setItem('loggedInUser', JSON.stringify({ username: newUser.username, userType: newUser.user_type }));
+            window.location.href = '../static/html/home.html';
+          }
+        })
+        .catch(error => console.error('Error fetching users data:', error));
+    });
+  </script>
+
+    <footer>
+      Loan_Shark&copy2024
+    </footer>
+</body>
+</html>

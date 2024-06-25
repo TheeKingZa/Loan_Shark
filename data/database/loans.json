@@ -1,0 +1,16 @@
+[
+    {
+        "user_id": "oe3jie45_loanShark",
+        "name": "John",
+        "surname":"Doe",
+        "username": "Johnny",
+        "password":"1234",
+        "email": "example@gmail.com",
+        "loan": {
+            "loan_id":  "33y3u742fredsaf",
+            "amount": 100,
+            "term": 1,
+            "interestRate": 0.50
+        }
+    }
+]
