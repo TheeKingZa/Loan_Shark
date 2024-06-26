@@ -63,7 +63,6 @@ button:hover {
 
 a {
     text-decoration: none;
-    font-size: 30px;
     color: red;
 }
 
@@ -122,11 +121,48 @@ footer {
     .div-grid {
         background-color: var(--primary);
     }
+
+    .content {
+        font-size: 20pt;
+        width: 100%;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 5px solid var(--primary);
+        background-color: var(--main);
+        color: var(--white);
+    }
+
+    .content ul{
+        font-size: 14px;
+        gap: 2rem;
+        justify-content: space-between;
+        display: flex;
+        list-style: none;
+    }
+
+    .dash-ul {
+        display: none;
+    }
 }
 
 
 @media (max-width: 500px) {
     body {
         background-color: var(--primary);
+    }
+
+    .content {
+        width: 100%;
+        padding: 5px;
+        display: flex;
+        border: 5px solid var(--main);
+        background-color: var(--white);
+    }
+
+    a:hover {
+        padding: 2px;
+        background-color: var(--secondary);
     }
  }

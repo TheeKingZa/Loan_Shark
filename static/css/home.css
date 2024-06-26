@@ -1,25 +1,21 @@
-#content {
-    width: 100%;
-    padding: 5px;
-    display: flex;
-    border: 5px solid var(--main);
-    background-color: var(--white);
+
+
+.dash-ul {
+    display: none;
 }
 
-#content ul{
-    gap: 2rem;
-    justify-content: space-between;
-    display: flex;
-    list-style: none;
-}
+
+/*
+ * acc.type heading
+ */
 
 .acc-type {
     font-weight: bold;
     padding: 5px;
     background-color: var(--white);
-    top: 10px;
-    right: 10px;
+    bottom: 5%;
+    right: 5%;
     position: fixed;
     z-index: 999;
-    border: 5px solid lime;
+    border: 3px inset var(--main);
 }
