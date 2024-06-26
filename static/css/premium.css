@@ -1,0 +1,17 @@
+.chart-container {
+    padding: 5px;
+    margin-top: 10vh;
+    background-color: var(--secondary);
+}
+
+
+@media (min-width: 500px) {
+    .chart-container {
+        width: 100vw;
+        height: 350px;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0 0 60px var(--secondary);
+    }
+}

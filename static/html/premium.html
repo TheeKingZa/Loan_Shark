@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="../css/root.css">
   <link rel="stylesheet" href="../css/premium.css">
 
+  <!-- Chart Library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
   <title>Home</title>
 </head>
 <body>
@@ -46,9 +49,10 @@
 
 
       <main>
-        <!-- place the graphs in here-->
+        <div class="chart-container">
+          <canvas id="myChart"></canvas>
+        </div>
       </main>
-
 
 
            
@@ -58,5 +62,6 @@
     
   <script src="../js/logout.js"></script>
   <script src="../js/user-type.js"></script>
+  <script src="../js/users_loancharts.js"></script>
 </body>
 </html>

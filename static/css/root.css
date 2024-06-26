@@ -208,6 +208,9 @@ footer {
 /* SMALL SCREEN */
 @media (max-width: 500px) {
     body {
+        margin-top: 45%;
+        margin-bottom: 25%;
+
         min-height: 100vh;
         background-color: var(--primary);
     }
