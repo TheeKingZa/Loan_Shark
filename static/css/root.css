@@ -4,6 +4,9 @@
     box-sizing: border-box;
 }
 
+/*
+ *  Root,  Changelog and ver
+ */
 
 :root {
     --main: rgb(122 233 231);
@@ -16,14 +19,27 @@
     --error: red;
 }
 
+.changelog {
+
+}
+
+.ver {
+    font-weight: bold;
+    padding: 5px;
+    background-color: var(--white);
+    bottom: 9%;
+    right: 5%;
+    position: fixed;
+    z-index: 999;
+    border: 3px inset var(--main);
+}
+
 /*
  * Body
  *
  =========================*/
 
 body {
-    margin-top: 5em;
-    margin-bottom: 5em;
     min-height: 100vh;
     display: flex;
     justify-content: space-between;
@@ -74,20 +90,23 @@ a {
 .dash-ul li:hover {
 
     background-color: var(--secondary);
-    animation: dropDown 1s ease-in;
+    animation: dropDown 1s ease-in alternate;
 }
 
 
 @keyframes dropDown {
     0% {
+        box-shadow: 0 0 30px var(--main);
         background-color: var(--main);
     }
 
     50% {
+        box-shadow: 0 0 30px var(--primary);
         background-color: var(--primary);
     }
 
     100% {
+        box-shadow: 0 0 30px var(--secondary);
         background-color: var(--secondary);
 
     }
@@ -159,9 +178,11 @@ footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border: 5px solid var(--primary);
+        border: 2px solid var(--primary);
         background-color: var(--main);
         color: var(--white);
+        box-shadow: 0 0 20px inset var(--primary);
+        border-radius: 25px;
     }
 
     .content ul{
@@ -174,19 +195,24 @@ footer {
     }
 }
 
-
+/* SMALL SCREEN */
 @media (max-width: 500px) {
     body {
+        max-height: 100vh;
         background-color: var(--primary);
+        box-shadow: 0 0 30px inset var(--secondary);
     }
 
     .content {
+        top: 0;
         gap: 1rem;
         width: 100%;
         padding: 5px;
+        position: fixed;
         display: grid;
-        border: 5px solid var(--main);
+        border: 3px solid var(--main);
         background-color: var(--white);
+        box-shadow: 0 0  20px inset var(--secondary);
     }
     
     .content ul {
@@ -194,5 +220,23 @@ footer {
         display: flex;
         justify-content: space-evenly;
         border-top: 3px solid var(--secondary);
+    }
+
+    .dash-logo-flex {
+        height: 100%;
+        padding: 5px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    
+    .logo-dashboard {
+        width: 100px;
+        height: 100px;
+        background-image: url('../../data/imgs/Logo.png');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
     }
  }
