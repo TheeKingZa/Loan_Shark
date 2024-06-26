@@ -8,7 +8,7 @@
   <title>Home</title>
 </head>
 <body>
-  <p class="acc-type">Account type: <span id="user-type"></span></p> 
+  <p class="acc-type"><span id="user-type"></span></p> 
     <nav class="content">
       <div>
       <h1>Dashboard</h1>
@@ -19,7 +19,7 @@
           <!-- Link to dummy.html only available for premium users -->
           <li id="dummy-link" style="display: none;"><a href="dummy.html">Dummy Page</a></li>
           <!-- Add more navigation links here -->
-          <a href="#" id="logout-button">Logout</a>
+          <li><a href="#" id="logout-button">Logout</a></li>
 
         </ul>
 
@@ -41,7 +41,7 @@
         if (loggedInUser) {
           userTypeSpan.textContent = loggedInUser.userType;
           // Show link to dummy.html only for premium users
-          if (loggedInUser.userType === 'premium_user' || loggedInUser.userType === 'admin') {
+          if (loggedInUser.userType === 'PREMIUM' || loggedInUser.userType === 'ADMIN') {
             dummyLink.style.display = 'list-item';
           }
         } else {

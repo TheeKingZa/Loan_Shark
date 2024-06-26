@@ -4,7 +4,7 @@
       "username": "TheeKingZa",
       "email": "proceedingmc@gmail.com",
       "password": "1234567",
-      "user_type": "admin",
+      "user_type": "ADMIN",
       "profile": {
         "first_name": "Pule",
         "last_name": "Mathikha",
@@ -17,7 +17,7 @@
       "username": "basic_user1",
       "email": "user1@example.com",
       "password": "user123",
-      "user_type": "basic_user",
+      "user_type": "BASIC",
       "profile": {
         "first_name": "Bob",
         "last_name": "Johnson",
@@ -30,7 +30,7 @@
       "username": "Owner",
       "email": "premium1@example.com",
       "password": "premium123",
-      "user_type": "premium_user",
+      "user_type": "PREMIUM",
       "profile": {
         "first_name": "Charlie",
         "last_name": "Brown",

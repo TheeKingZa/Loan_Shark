@@ -63,8 +63,38 @@ button:hover {
 
 a {
     text-decoration: none;
-    color: red;
 }
+
+.dash-ul li {
+    padding: 5px;
+    color: var(--primary);
+
+}
+
+.dash-ul li:hover {
+
+    background-color: var(--secondary);
+    animation: dropDown 1s ease-in;
+}
+
+
+@keyframes dropDown {
+    0% {
+        background-color: var(--main);
+    }
+
+    50% {
+        background-color: var(--primary);
+    }
+
+    100% {
+        background-color: var(--secondary);
+
+    }
+    
+}
+
+
 
 /*
  * HEADER
@@ -140,10 +170,7 @@ footer {
         justify-content: space-between;
         display: flex;
         list-style: none;
-    }
 
-    .dash-ul {
-        display: none;
     }
 }
 
@@ -154,15 +181,18 @@ footer {
     }
 
     .content {
+        gap: 1rem;
         width: 100%;
         padding: 5px;
-        display: flex;
+        display: grid;
         border: 5px solid var(--main);
         background-color: var(--white);
     }
-
-    a:hover {
-        padding: 2px;
-        background-color: var(--secondary);
+    
+    .content ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+        border-top: 3px solid var(--secondary);
     }
  }
