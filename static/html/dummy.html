@@ -3,10 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dummy Page</title>
+  <link rel="stylesheet" href="../css/root.css">
+  <link rel="stylesheet" href="../css/changelog.css">
+  <title>Home</title>
 </head>
 <body>
-  <h1>Dummy Page</h1>
-  <p>This page is only accessible to premium users.</p>
+
+  <!-- Fixed postions-->
+  <p class="acc-type"><span id="user-type"></span></p>
+  <p class="ver">v1.0.0</p>
+
+
+  <!-- Navigation -->
+    <nav class="content">
+      <div class="dash-logo-flex">
+        <div>
+      <h1>Dashboard</h1> 
+      </div>
+      <div class="logo-dashboard">
+      </div>
+      </div>
+
+      <div class="nav-menu">
+      <ul class="dash-ul">
+          <li><a href="../html/home.html">Home</a></li>
+          <li><a href="#" id="logout-button">Logout</a></li>
+        </ul>
+        </div>
+    </nav>
+
+
+      <header>
+        <h1>Premuim Page</h1>
+      </header>
+  
+  <script src="../js/logout.js"></script>
+  <script src="../js/user-type.js"></script>
 </body>
 </html>
