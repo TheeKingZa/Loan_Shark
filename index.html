@@ -84,13 +84,13 @@
     // Initialize admin account if not present
     function initializeAdminAccount() {
       const users = JSON.parse(localStorage.getItem('users')) || [];
-      const admin = users.find(user => user.username === 'admin');
+      const admin = users.find(user => user.username === 'ADMIN');
       if (!admin) {
         users.push({
           username: 'TheeKingZa',
           email: 'proceedingmc@gmail.com',
           password: '1234567', // In a real application, ensure to hash passwords
-          user_type: 'admin'
+          user_type: 'ADMIN'
         });
         localStorage.setItem('users', JSON.stringify(users));
       }
@@ -150,7 +150,7 @@
           username: username,
           email: email,
           password: password, // Ideally, hash the password before storing
-          user_type: 'basic' // Set user type to 'basic' by default
+          user_type: 'BASIC' // Set user type to 'basic' by default
         };
         users.push(newUser); // Add new user to users array
         localStorage.setItem('users', JSON.stringify(users)); // Save updated users data to local storage
