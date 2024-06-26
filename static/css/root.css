@@ -23,33 +23,6 @@
 
 }
 
-.ver {
-    font-weight: bold;
-    padding: 5px;
-    background-color: var(--white);
-    bottom: 9%;
-    right: 5%;
-    position: fixed;
-    z-index: 999;
-    border: 3px inset var(--main);
-}
-
-
-/*
- * acc.type heading
- */
-
- .acc-type {
-    font-weight: bold;
-    padding: 5px;
-    background-color: var(--white);
-    bottom: 5%;
-    right: 5%;
-    position: fixed;
-    z-index: 999;
-    border: 3px inset var(--main);
-}
-
 
 /*
  * Body
@@ -59,7 +32,6 @@
 body {
     margin-top: 20%;
     margin-bottom: 20%;
-    min-height: 100vh;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -162,22 +134,43 @@ footer {
     background-color: var(--white);
     bottom: 0;
     position: fixed;
+    box-shadow: 0 0  20px inset var(--secondary);
 }
 
 
+
+.fxd-pos {
+    z-index: 999;
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    bottom: 0;
+    position: fixed;
+    border: 3px solid red;
+}
+
+.fxd-pos > * {
+    font-weight: bold;
+    padding: 5px;
+    color: var(--black);
+    background-color: var(--main);
+    box-shadow: 0 0 10px var(--main);
+}
 
 /*
  * Screen Setup
  *
  */
 
-
+/*
+ * Larger Screen Size
+ */
  @media (min-width: 500px) {
     body {
-        background-image: url('../../data/imgs/logo2.jpg');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;   
+        background-image: url('../../data/imgs/Logo.png');
+        background-position:top;
+        background-repeat: space;
     }
 
     .div-login-log {
@@ -210,14 +203,14 @@ footer {
         list-style: none;
 
     }
+
 }
 
 /* SMALL SCREEN */
 @media (max-width: 500px) {
     body {
-        max-height: 100vh;
+        min-height: 100vh;
         background-color: var(--primary);
-        box-shadow: 0 0 30px inset var(--secondary);
     }
 
     .content {

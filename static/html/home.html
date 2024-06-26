@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+   <link rel="shortcut icon" href="../../data/imgs/Logo.png" type="image/x-icon">
+  <!-- links to CSS -->
   <link rel="stylesheet" href="../css/root.css">
   <link rel="stylesheet" href="../css/home.css">
   <title>Home</title>
@@ -10,9 +13,10 @@
 <body>
 
   <!-- Fixed postions-->
+   <div class="fxd-pos">
   <p class="acc-type"><span id="user-type"></span></p>
   <a href="../html/changelog.html"><p class="ver">v1.0.0</p></a>
-
+  </div>
 
   <!-- Navigation -->
     <nav class="content">
@@ -29,6 +33,7 @@
           <li><a href="home.html">Home</a></li>
           <!-- Link to dummy.html only available for premium users -->
           <li id="dummy-link" style="display: none;"><a href="dummy.html">Dummy Page</a></li>
+          <li><a href="./profile.html">Profile</a></li>
           <!-- Add more navigation links here -->
           <li><a href="#" id="logout-button">Logout</a></li>
 
@@ -37,11 +42,25 @@
     </nav>
 
 
+    <!-- Content -->
+
      <header>
       <h1>
         Welcome Page
       </h1>
      </header>
+
+
+
+
+
+
+
+
+
+     <footer>
+      Loan_Shark&copy2024
+    </footer>
 
   <!-- Js file links -->
   <script src="../js/logout.js"></script>

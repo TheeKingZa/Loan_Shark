@@ -6,6 +6,23 @@
   <link rel="stylesheet" href="./static/css/root.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <title>Login or Signup</title>
+  <style>
+    .popup-message {
+      display: none;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .popup-message.success {
+      background-color: green;
+      color: white;
+    }
+    .popup-message.error {
+      background-color: red;
+      color: white;
+    }
+  </style>
 </head>
 <body>
 
@@ -13,104 +30,143 @@
     <a href="./static/html/home.html">Welcome to my App</a>
   </header>
 
-<div class="div-grid">
+  <div class="div-grid">
 
-  <div class="div-login-log">
+    <div class="div-login-log"></div>
 
+    <div class="form-display">
+      <div class="login">
+        <h1>Login</h1>
+        <form id="login-form">
+          <label for="login-username">Username:</label>
+          <input type="text" id="login-username" name="username" required>
+          <br>
+          <label for="login-password">Password:</label>
+          <input type="password" id="login-password" name="password" required>
+          <br>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+      <div class="signup">
+        <h1>Signup</h1>
+        <form id="signup-form">
+          <label for="signup-username">Username:</label>
+          <input type="text" id="signup-username" name="username" required>
+          <br>
+          <label for="signup-email">Email:</label>
+          <input type="email" id="signup-email" name="email" required>
+          <br>
+          <label for="signup-password">Password:</label>
+          <input type="password" id="signup-password" name="password" required>
+          <br>
+          <label for="signup-confirm-password">Confirm Password:</label>
+          <input type="password" id="signup-confirm-password" name="confirmPassword" required>
+          <br>
+          <button type="submit">Signup</button>
+        </form>
+        <div id="popup-message" class="popup-message"></div>
+      </div>
+    </div>
   </div>
 
-  <div class="form-display">
-<div class="login">
-  <h1>Login</h1>
-  <form id="login-form">
-    <label for="login-username">Username:</label>
-    <input type="text" id="login-username" name="username" required>
-    <br>
-    <label for="login-password">Password:</label>
-    <input type="password" id="login-password" name="password" required>
-    <br>
-    <button type="submit">Login</button>
-  </form>
-</div>
-<div class="signup">
-  <h1>Signup</h1>
-  <form id="signup-form">
-    <label for="signup-username">Username:</label>
-    <input type="text" id="signup-username" name="username" required>
-    <br>
-    <label for="signup-email">Email:</label>
-    <input type="email" id="signup-email" name="email" required>
-    <br>
-    <label for="signup-password">Password:</label>
-    <input type="password" id="signup-password" name="password" required>
-    <br>
-    <button type="submit">Signup</button>
-  </form>
-</div>
-</div>
-</div>
-
-
-
-
   <script>
+    // Function to display a popup message
+    function displayPopupMessage(message, type) {
+      const popupMessage = document.getElementById('popup-message');
+      popupMessage.textContent = message;
+      popupMessage.className = `popup-message ${type}`;
+      popupMessage.style.display = 'block';
+      setTimeout(() => {
+        popupMessage.style.display = 'none';
+      }, 3000);
+    }
+
+    // Initialize admin account if not present
+    function initializeAdminAccount() {
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+      const admin = users.find(user => user.username === 'admin');
+      if (!admin) {
+        users.push({
+          username: 'TheeKingZa',
+          email: 'proceedingmc@gmail.com',
+          password: '1234567', // In a real application, ensure to hash passwords
+          user_type: 'admin'
+        });
+        localStorage.setItem('users', JSON.stringify(users));
+      }
+    }
+
+    initializeAdminAccount();
+
+    // Add event listener for login form submission
     document.getElementById('login-form').addEventListener('submit', function(event) {
-      event.preventDefault();
+      event.preventDefault(); // Prevent default form submission
       const username = document.getElementById('login-username').value;
       const password = document.getElementById('login-password').value;
 
-      // Fetch users data from users.json
-      fetch('data/database/users.json')
-        .then(response => response.json())
-        .then(users => {
-          const user = users.find(user => user.username === username && user.password === password);
-          console.log(users);
-          if (user) {
-            localStorage.setItem('loggedInUser', JSON.stringify({ username: user.username, userType: user.user_type }));
-            window.location.href = '../static/html/home.html';
-          } else {
-            alert('Invalid username or password');
-          }
-        })
-        .catch(error => console.error('Error fetching users data:', error));
+      // Fetch users data from local storage
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+      const user = users.find(user => user.username === username && user.password === password);
+
+      if (user) {
+        // Store logged in user information in local storage
+        localStorage.setItem('loggedInUser', JSON.stringify({ username: user.username, userType: user.user_type }));
+        window.location.href = '../static/html/home.html'; // Redirect to home page
+      } else {
+        displayPopupMessage('Invalid username or password', 'error'); // Alert if login fails
+      }
     });
 
+    // Add event listener for signup form submission
     document.getElementById('signup-form').addEventListener('submit', function(event) {
-      event.preventDefault();
+      event.preventDefault(); // Prevent default form submission
       const username = document.getElementById('signup-username').value;
       const email = document.getElementById('signup-email').value;
       const password = document.getElementById('signup-password').value;
-      const userType = document.getElementById('signup-user-type').value;
+      const confirmPassword = document.getElementById('signup-confirm-password').value;
 
-      // Fetch users data from users.json
-      fetch('data/database/users.json')
-        .then(response => response.json())
-        .then(users => {
-          // Check if username already exists
-          const existingUser = users.find(user => user.username === username);
-          if (existingUser) {
-            alert('Username already exists. Please choose another one.');
-          } else {
-            // Create new user object
-            const newUser = {
-              username: username,
-              email: email,
-              password: password,
-              user_type: userType
-            };
-            // Add new user to users array
-            users.push(newUser);
-            // Save updated users data back to users.json
-            localStorage.setItem('loggedInUser', JSON.stringify({ username: newUser.username, userType: newUser.user_type }));
-            // window.location.href = '../static/html/home.html';
-          }
-        })
-        .catch(error => console.error('Error fetching users data:', error));
+      // Check if passwords match
+      if (password !== confirmPassword) {
+        displayPopupMessage('Passwords do not match', 'error');
+        return;
+      }
+
+      // Check if password is at least 6 characters long
+      if (password.length < 6) {
+        displayPopupMessage('Password must be at least 6 characters long', 'error');
+        return;
+      }
+
+      // Fetch users data from local storage
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+
+      // Check if username already exists
+      const existingUser = users.find(user => user.username === username);
+      if (existingUser) {
+        displayPopupMessage('Username already exists. Please choose another one.', 'error'); // Alert if username exists
+      } else {
+        // Create new user object
+        const newUser = {
+          username: username,
+          email: email,
+          password: password, // Ideally, hash the password before storing
+          user_type: 'basic' // Set user type to 'basic' by default
+        };
+        users.push(newUser); // Add new user to users array
+        localStorage.setItem('users', JSON.stringify(users)); // Save updated users data to local storage
+
+        // Store logged in user information in local storage
+        localStorage.setItem('loggedInUser', JSON.stringify({ username: newUser.username, userType: newUser.user_type }));
+        displayPopupMessage('Signup successful!', 'success'); // Show success message
+        setTimeout(() => {
+          window.location.href = '../static/html/home.html'; // Redirect to home page after 3 seconds
+        }, 3000);
+      }
     });
   </script>
 
-    <footer>
-      Loan_Shark&copy2024
-    </footer>
+  <footer>
+    Loan_Shark&copy;2024
+  </footer>
 </body>
 </html>

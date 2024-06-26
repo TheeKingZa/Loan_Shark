@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/root.css">
+  <link rel="stylesheet" href="../css/profile.css">
+  <title>User Profile</title>
+</head>
+<body>
+
+  <!-- Fixed postions-->
+  <div class="fxd-pos">
+    <p class="acc-type"><span id="user-type"></span></p>
+    <a href="../html/changelog.html"><p class="ver">v1.0.0</p></a>
+    </div>
+  
+  
+    <!-- Navigation -->
+      <nav class="content">
+        <div class="dash-logo-flex">
+          <div>
+        <h1>Dashboard</h1> 
+        </div>
+        <div class="logo-dashboard">
+        </div>
+        </div>
+  
+        <div class="nav-menu">
+        <ul class="dash-ul">
+            <li><a href="home.html">Home</a></li>
+            <!-- Link to dummy.html only available for premium users -->
+            <li id="dummy-link" style="display: none;"><a href="dummy.html">Dummy Page</a></li>
+            <li><a href="./profile.html">Profile</a></li>
+            <!-- Add more navigation links here -->
+            <li><a href="#" id="logout-button">Logout</a></li>
+  
+          </ul>
+          </div>
+      </nav>
+
+
+
+
+  <header>
+    <a href="home.html">Welcome to my App</a>
+  </header>
+
+  <div class="profile">
+    <h1>User Profile</h1>
+    <div id="profile-details"></div>
+  </div>
+
+  <script>
+    // Function to load user details
+    function loadUserProfile() {
+      const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+      if (!loggedInUser) {
+        window.location.href = 'login.html'; // Redirect to login if no user is logged in
+        return;
+      }
+
+      const profileDetails = document.getElementById('profile-details');
+      profileDetails.innerHTML = `
+        <p><strong>Username:</strong> ${loggedInUser.username}</p>
+        <p><strong>User Type:</strong> ${loggedInUser.userType}</p>
+      `;
+
+      // Fetch all users to get more details
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+      const user = users.find(user => user.username === loggedInUser.username);
+      if (user) {
+        profileDetails.innerHTML += `
+          <p><strong>Email:</strong> ${user.email}</p>
+        `;
+      }
+    }
+
+    loadUserProfile();
+  </script>
+
+  <footer>
+    Loan_Shark&copy;2024
+  </footer>
+
+
+  <script src="../js/user-type.js"></script>
+  <script src="../js/logout.js"></script>
+</body>
+</html>
