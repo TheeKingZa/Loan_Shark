@@ -6,9 +6,9 @@
 
 
 :root {
-    --main: gold;
-    --primary: greenyellow;
-    --secondary: brown;
+    --main: rgb(122 233 231);
+    --primary: rgb(124, 124, 231);
+    --secondary: rgb(122 255 231);
 
     --black: black;
     --white: white;
