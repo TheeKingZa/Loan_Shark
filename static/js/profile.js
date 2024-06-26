@@ -9,7 +9,6 @@ function loadUserProfile() {
     const profileDetails = document.getElementById('profile-details');
     profileDetails.innerHTML = `
       <p><strong>Username:</strong> ${loggedInUser.username}</p>
-      <p><strong>User Type:</strong> ${loggedInUser.userType}</p>
     `;
 
     // Fetch all users to get more details
