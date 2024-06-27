@@ -9,9 +9,9 @@
  */
 
 :root {
-    --main: rgb(122 233 231);
-    --primary: rgb(124, 124, 231);
-    --secondary: rgb(122 255 231);
+    --main: gray;
+    --primary: pink;
+    --secondary: white;
 
     --black: black;
     --white: white;
@@ -69,6 +69,7 @@ button:hover {
 }
 
 a {
+    color: var(--black);
     text-decoration: none;
 }
 
@@ -200,7 +201,6 @@ footer {
         justify-content: space-between;
         display: flex;
         list-style: none;
-
     }
 
 }

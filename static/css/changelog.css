@@ -1,0 +1,12 @@
+main {
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+
+section li:hover {
+    padding: 10px;
+    list-style: none;
+    background-color:  var(--primary);
+}

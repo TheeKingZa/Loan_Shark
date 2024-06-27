@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (loggedInUser) {
       userTypeSpan.textContent = loggedInUser.userType;
-      // Show link to dummy.html only for premium users
+      // Show link to premium.html only for premium users
       if (loggedInUser.userType === 'PREMIUM' || loggedInUser.userType === 'ADMIN') {
         paidLink.style.display = 'list-item';
       }

@@ -8,8 +8,8 @@
     justify-content: center;
     gap: 2rem;
     padding: 15px;
-    background-color: var(--secondary);
-    background: radial-gradient(var(--primary), var(--main), transparent, transparent);
+    background-color: var(--main);
+    border-radius: 25px;
 }
 
 #profile-details {

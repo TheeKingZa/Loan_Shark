@@ -29,22 +29,22 @@
     width: 150px;
     height: 150px;
 
-    background-image: url('../../data/imgs/logo1.jpg');
+    background-image: url('../../data/imgs/logoFactory.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    animation: spinRot .1s infinite;
+    animation: spinRot 5s ease-in;
 
 }
 
 .home-ad2 {
     width: 150px;
     height: 150px;
-    background-image: url('../../data/imgs/logo2.jpg');
+    background-image: url('../../data/imgs/LoanSharkBG1.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    animation: spinRot 20s infinite alternate;
+    animation: spinRot 5s ease-out;
 }
 
 
@@ -53,22 +53,21 @@
     width: 150px;
     height: 150px;
 
-    background-image: url('../../data/imgs/logo2.jpg');
+    background-image: url('../../data/imgs/logo3.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    animation: spinRot 50s infinite alternate;
-
+    animation: spinRot 5s ease-in;
 }
 
 .home-ad4 {
     width: 150px;
     height: 150px;
-    background-image: url('../../data/imgs/logo2.jpg');
+    background-image: url('../../data/imgs/Factory01.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    animation: spinRot 5s infinite alternate;
+    animation: spinRot 5s ease-out;
 }
 
 
