@@ -13,5 +13,36 @@
 }
 
 #profile-details {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 30vh;
+    border: 3px inset var(--secondary);
 
+}
+
+
+.delete-div {
+    gap: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-content: center;
+}
+
+.delete-account-button{
+    padding: 5px;
+    background-color: var(--secondary);    
+}
+
+
+.delete-account-section {
+    
+    gap: 2rem;
+    padding: 5px;
+    display: flex;
+    flex-direction: ;
+    justify-content: center;
+    align-items: center;
 }

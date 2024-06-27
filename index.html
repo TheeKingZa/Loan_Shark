@@ -150,10 +150,17 @@
       // Fetch users data from local storage
       const users = JSON.parse(localStorage.getItem('users')) || [];
 
-      // Check if username already exists
+      // Check if username, email, or ID number already exists
       const existingUser = users.find(user => user.username === username);
+      const existingEmail = users.find(user => user.email === email);
+      const existingIdNumber = users.find(user => user.idNumber === idNumber);
+
       if (existingUser) {
-        displayPopupMessage('Username already exists. Please choose another one.', 'error'); // Alert if username exists
+        displayPopupMessage('Username Taken', 'error'); // Alert if username exists
+      } else if (existingEmail) {
+        displayPopupMessage('E-mail Taken', 'error'); // Alert if email exists
+      } else if (existingIdNumber) {
+        displayPopupMessage('Please Enter a Valid ID Number.', 'error'); // Alert if ID number exists
       } else {
         // Create new user object with additional details and random ID
         const newUser = {

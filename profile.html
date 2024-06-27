@@ -39,12 +39,17 @@
           </div>
       </nav>
 
+      <!-- Users Profile -->
   <div class="profile">
     <h1>Profile</h1>
     <div id="profile-details"></div>
-    <div>
-      <button id="delete-account-button">Delete Account</button>
-      <div id="delete-account-section" style="display:none;">
+    
+    
+    <div class="delete-div">
+      <!-- Delete Acc button -->
+      <button class="delete-account-button" id="delete-account-button">Delete Account</button>
+
+      <div class="delete-account-section" id="delete-account-section" style="display:none;">
         <p>Please confirm your email or username to delete your account:</p>
         <input type="text" id="confirm-username-email" placeholder="Enter your email or username">
         <button id="confirm-delete-button">Confirm Delete</button>
@@ -63,6 +68,5 @@
   <script src="./static/js/user-type.js"></script>
   <script src="./static/js/logout.js"></script>
   <script src="./static/js/profile.js"></script>
-  <script src="./static/js/permissions.js"></script>
 </body>
 </html>

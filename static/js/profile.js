@@ -20,9 +20,9 @@ function loadUserProfile() {
   const user = users.find(user => user.username === loggedInUser.username);
   if (user) {
     profileDetails.innerHTML += `
+    <p><strong>First Name:</strong> ${user.firstName}</p>
+    <p><strong>Last Name:</strong> ${user.lastName}</p>
       <p><strong>Email:</strong> ${user.email}</p>
-      <p><strong>First Name:</strong> ${user.firstName}</p>
-      <p><strong>Last Name:</strong> ${user.lastName}</p>
       <p><strong>ID Number:</strong> ${user.idNumber}</p>
       <p><strong>User ID:</strong> ${user.id}</p>
     `;
