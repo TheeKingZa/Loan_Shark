@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Favicon -->
-   <link rel="shortcut icon" href="../../data/imgs/Logo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../../data/imgs/Logo.png" type="image/x-icon">
   <!-- links to CSS -->
   <link rel="stylesheet" href="./static/css/root.css">
   <link rel="stylesheet" href="./static/css/home.css">
@@ -12,81 +12,63 @@
 </head>
 <body>
 
-  <!-- Fixed postions-->
-   <div class="fxd-pos">
-  <p class="acc-type"><span id="user-type"></span></p>
-  <a href="../html/changelog.html"><p class="ver">v1.0.0</p></a>
+  <!-- Fixed positions -->
+  <div class="fxd-pos">
+    <p class="acc-type"><span id="user-type"></span></p>
+    <a href="./changelog.html"><p class="ver">v1.0.0</p></a>
   </div>
 
   <!-- Navigation -->
-    <nav class="content">
-      <div class="dash-logo-flex">
-        <div>
-      <h1>Dashboard</h1> 
+  <nav class="content">
+    <div class="dash-logo-flex">
+      <div>
+        <h1>Dashboard</h1> 
       </div>
-      <div class="logo-dashboard">
-      </div>
-      </div>
+      <div class="logo-dashboard"></div>
+    </div>
 
-      <div class="nav-menu">
+    <div class="nav-menu">
       <ul class="dash-ul">
-          <!-- Link to dummy.html only available for premium users -->
-          <li id="paid-link" style="display: none;"><a href="./premium.html">Premium Content</a></li>
-          <li><a href="./profile.html">Profile</a></li>
-          <!-- Add more navigation links here -->
-          <li><a href="#" id="logout-button">Logout</a></li>
+        <!-- Link to dummy.html only available for premium users -->
+        <li id="paid-link" style="display: none;"><a href="./premium.html">Premium Content</a></li>
+        <li><a href="./profile.html">Profile</a></li>
+        <li><a href="./settings.html">Settings</a></li> <!-- New Settings Link -->
+        <!-- Add more navigation links here -->
+        <li><a href="#" id="logout-button">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
 
-        </ul>
-        </div>
-    </nav>
+  <!-- Content -->
+  <header>
+    <h1>Welcome Page</h1>
+  </header>
 
+  <main>
+    <section>
+      <h1>Hello World!</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quibusdam deserunt doloremque cumque voluptate delectus tempora quos vel a, harum beatae quisquam sapiente temporibus, sint nisi amet debitis adipisci mollitia.
+        <br>
+        <br>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci saepe quod animi nesciunt quis, nisi in enim, accusantium voluptate rerum dolore deserunt iusto ex at perspiciatis! Magnam officiis esse quos?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum asperiores beatae quae enim autem corporis voluptatum rem soluta sint, iusto cumque, architecto accusamus qui magnam dolor praesentium quam exercitationem dolore?
+      </p>
+    </section>
+    <section>
+      <h2>Section 2</h2>
+      <div class="home-ad-grid">
+        <div class="home-ad1">ad_1</div>
+        <div class="home-ad2">ad_2</div>
+        <div class="home-ad3">ad_1</div>
+        <div class="home-ad4">ad_2</div>
+      </div>
+    </section>
+  </main>
 
-    <!-- Content -->
-
-     <header>
-      <h1>
-        Welcome Page
-      </h1>
-     </header>
-
-
-     <main>
-      <section>
-        <h1>Hello World!</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quibusdam deserunt doloremque cumque voluptate delectus tempora quos vel a, harum beatae quisquam sapiente temporibus, sint nisi amet debitis adipisci mollitia.
-          <br>
-          <br>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci saepe quod animi nesciunt quis, nisi in enim, accusantium voluptate rerum dolore deserunt iusto ex at perspiciatis! Magnam officiis esse quos?
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum asperiores beatae quae enim autem corporis voluptatum rem soluta sint, iusto cumque, architecto accusamus qui magnam dolor praesentium quam exercitationem dolore?
-        </p>
-      </section>
-      <section>
-        <h2>
-          Section 2
-        </h2>
-        <div class="home-ad-grid">
-        <div class="home-ad1">ad_1
-        </div>
-        <div class="home-ad2">ad_2
-        </div>
-        <div class="home-ad3">ad_1
-        </div>
-        <div class="home-ad4">ad_2
-        </div>
-        </div>
-      </section>
-     </main>
-
-
-
-
-
-
-
-     <footer>
-      Loan_Shark&copy2024
-    </footer>
+  <footer>
+    Loan_Shark&copy;2024
+  </footer>
 
   <!-- Js file links -->
   <script src="./static/js/logout.js"></script>

@@ -3,53 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/root.css">
-  <link rel="stylesheet" href="../css/changelog.css">
+  <link rel="stylesheet" href="./static/css/root.css">
+  <link rel="stylesheet" href="./static/css/changelog.css">
   <title>ChangeLog - Loan_Shark</title>
 </head>
 <body>
 
-  <!-- Fixed postions-->
-  <div class=" fxd-pos">
-  <p class="acc-type"><span id="user-type"></span></p>
+  <!-- Fixed positions -->
+  <div class="fxd-pos">
+    <p class="acc-type"><span id="user-type"></span></p>
     <a href="../html/changelog.html"><p class="ver">v1.0.0</p></a>
-    </div>
-
+  </div>
 
   <!-- Navigation -->
-    <nav class="content">
-      <div class="dash-logo-flex">
-        <div>
-      <h1>Dashboard</h1> 
+  <nav class="content">
+    <div class="dash-logo-flex">
+      <div>
+        <h1>Dashboard</h1> 
       </div>
-      <div class="logo-dashboard">
-      </div>
-      </div>
+      <div class="logo-dashboard"></div>
+    </div>
 
-      <div class="nav-menu">
+    <div class="nav-menu">
       <ul class="dash-ul">
-          <li><a href="../html/home.html">Home</a></li>
-          <li><a href="#" id="logout-button">Logout</a></li>
-        </ul>
-        </div>
-    </nav>
+        <li><a href="./home.html">Home</a></li>
+        <li><a href="../html/settings.html">Settings</a></li> <!-- Add Settings Link -->
+        <li><a href="#" id="logout-button">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
 
+  <header>
+    <h1>Changelog</h1>
+  </header>
 
-      <header>
-        <h1>Changelog</h1>
-      </header>
-  
+  <!-- Content for Changelog -->
+  <section>
+    <h2>Version 1.0.0</h2>
+    <ul>
+      <li>Initial release of Loan_Shark</li>
+      <li>Added basic functionalities</li>
+      <li>Fixed bugs reported during testing</li>
+    </ul>
+  </section>
 
+  <footer>
+    Loan_Shark&copy;2024
+  </footer>
 
-
-           
-
-      
-     <footer>
-      Loan_Shark&copy2024
-    </footer>
-  
-  <script src="../js/logout.js"></script>
-  <script src="../js/user-type.js"></script>
+  <script src="./static/js/logout.js"></script>
+  <script src="./static/js/user-type.js"></script>
 </body>
 </html>

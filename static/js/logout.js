@@ -6,7 +6,7 @@ function logout() {
     localStorage.removeItem('loggedInUser');
     
     // Redirect to login page
-    window.location.href = 'index.html'; // Adjust this to your actual login page path
+    window.location.href = './index.html'; // Adjust this to your actual login page path
   }
   
   // Execute logout function when the logout button or link is clicked
