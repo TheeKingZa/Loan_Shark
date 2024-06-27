@@ -6,7 +6,7 @@
 function loadUserProfile() {
   const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
   if (!loggedInUser) {
-    window.location.href = '../../index.html'; // Redirect to login if no user is logged in
+    window.location.href = 'index.html'; // Redirect to login if no user is logged in
     return;
   }
 
@@ -52,7 +52,7 @@ document.getElementById('confirm-delete-button').addEventListener('click', funct
     localStorage.removeItem('loggedInUser');
 
     // Redirect to login page
-    window.location.href = '../../index.html';
+    window.location.href = 'index.html';
   } else {
     alert('Confirmation failed. Please enter your correct email or username.');
   }
