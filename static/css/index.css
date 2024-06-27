@@ -64,3 +64,21 @@
     background-color: var(--main);
 
 }
+
+
+
+.popup-message {
+    display: none;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .popup-message.success {
+    background-color: green;
+    color: white;
+  }
+  .popup-message.error {
+    background-color: red;
+    color: white;
+  }

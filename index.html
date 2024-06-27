@@ -6,23 +6,6 @@
   <link rel="stylesheet" href="./static/css/root.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <title>Login or Signup</title>
-  <style>
-    .popup-message {
-      display: none;
-      padding: 10px;
-      margin-top: 10px;
-      border-radius: 5px;
-      text-align: center;
-    }
-    .popup-message.success {
-      background-color: green;
-      color: white;
-    }
-    .popup-message.error {
-      background-color: red;
-      color: white;
-    }
-  </style>
 </head>
 <body>
 
@@ -62,6 +45,15 @@
           <label for="signup-confirm-password">Confirm Password:</label>
           <input type="password" id="signup-confirm-password" name="confirmPassword" required>
           <br>
+          <label for="signup-first-name">First Name:</label>
+          <input type="text" id="signup-first-name" name="firstName" required>
+          <br>
+          <label for="signup-last-name">Last Name:</label>
+          <input type="text" id="signup-last-name" name="lastName" required>
+          <br>
+          <label for="signup-id-number">ID Number (max 13 characters):</label>
+          <input type="text" id="signup-id-number" name="idNumber" maxlength="13" required>
+          <br>
           <button type="submit">Signup</button>
         </form>
         <div id="popup-message" class="popup-message"></div>
@@ -81,6 +73,11 @@
       }, 3000);
     }
 
+    // Generate a random ID
+    function generateRandomId() {
+      return 'ID-' + Math.random().toString(36).substr(2, 9); // Generate a random string and prefix with 'ID-'
+    }
+
     // Initialize admin account if not present
     function initializeAdminAccount() {
       const users = JSON.parse(localStorage.getItem('users')) || [];
@@ -88,9 +85,13 @@
       if (!admin) {
         users.push({
           username: 'TheeKingZa',
+          firstName: 'Pule',
+          lastName: 'Mathikha',
           email: 'proceedingmc@gmail.com',
           password: '1234567', // In a real application, ensure to hash passwords
-          user_type: 'ADMIN'
+          user_type: 'ADMIN',
+          idNumber: '9505205140089',
+          id: 'admin123'
         });
         localStorage.setItem('users', JSON.stringify(users));
       }
@@ -111,7 +112,7 @@
       if (user) {
         // Store logged in user information in local storage
         localStorage.setItem('loggedInUser', JSON.stringify({ username: user.username, userType: user.user_type }));
-        window.location.href = '../static/html/home.html'; // Redirect to home page
+        window.location.href = 'home.html'; // Redirect to home page
       } else {
         displayPopupMessage('Invalid username or password', 'error'); // Alert if login fails
       }
@@ -124,6 +125,9 @@
       const email = document.getElementById('signup-email').value;
       const password = document.getElementById('signup-password').value;
       const confirmPassword = document.getElementById('signup-confirm-password').value;
+      const firstName = document.getElementById('signup-first-name').value;
+      const lastName = document.getElementById('signup-last-name').value;
+      const idNumber = document.getElementById('signup-id-number').value;
 
       // Check if passwords match
       if (password !== confirmPassword) {
@@ -137,6 +141,12 @@
         return;
       }
 
+      // Check if ID number is no more than 13 characters
+      if (idNumber.length > 13) {
+        displayPopupMessage('ID number must not exceed 13 characters', 'error');
+        return;
+      }
+
       // Fetch users data from local storage
       const users = JSON.parse(localStorage.getItem('users')) || [];
 
@@ -145,11 +155,15 @@
       if (existingUser) {
         displayPopupMessage('Username already exists. Please choose another one.', 'error'); // Alert if username exists
       } else {
-        // Create new user object
+        // Create new user object with additional details and random ID
         const newUser = {
+          id: generateRandomId(),
           username: username,
           email: email,
           password: password, // Ideally, hash the password before storing
+          firstName: firstName,
+          lastName: lastName,
+          idNumber: idNumber,
           user_type: 'BASIC' // Set user type to 'basic' by default
         };
         users.push(newUser); // Add new user to users array
@@ -159,7 +173,7 @@
         localStorage.setItem('loggedInUser', JSON.stringify({ username: newUser.username, userType: newUser.user_type }));
         displayPopupMessage('Signup successful!', 'success'); // Show success message
         setTimeout(() => {
-          window.location.href = '../static/html/home.html'; // Redirect to home page after 3 seconds
+          window.location.href = 'home.html'; // Redirect to home page after 3 seconds
         }, 3000);
       }
     });
