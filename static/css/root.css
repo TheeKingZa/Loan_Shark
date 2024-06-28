@@ -11,7 +11,7 @@
 :root {
     --main: black;
     --primary: white;
-    --secondary: gold;
+    --secondary: rgb(16, 185, 185); /* main Color for Theme*/
 
     --black: black;
     --white: white;

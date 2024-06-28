@@ -1,12 +1,22 @@
 main {
+    padding: 20px;
+    width: 100%;
     gap: 2rem;
     display: flex;
     flex-direction: column;
+    background-color: var(--secondary);
 }
 
+
+h2 {
+    border-bottom: 3px solid;
+    margin-bottom: 3%;
+}
 
 section li:hover {
     padding: 10px;
     list-style: none;
     background-color:  var(--primary);
 }
+
+
