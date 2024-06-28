@@ -169,7 +169,7 @@ footer {
  */
  @media (min-width: 500px) {
     body {
-        background-color: var(--main);
+        background-color: var(--secondary);
         background-image: url('../../data/imgs/Logo.png');
         background-position:top;
         background-repeat: space;
