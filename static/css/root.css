@@ -9,9 +9,9 @@
  */
 
 :root {
-    --main: gray;
-    --primary: pink;
-    --secondary: white;
+    --main: black;
+    --primary: white;
+    --secondary: gold;
 
     --black: black;
     --white: white;
@@ -32,14 +32,15 @@
 body {
     margin-top: 20%;
     margin-bottom: 20%;
+    gap: 2rem;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    background-color: var(--main);
     color: var(--black);
+    background-color: var(--secondary);
 }
 
 
@@ -69,7 +70,7 @@ button:hover {
 }
 
 a {
-    color: var(--black);
+    color: var(--primary);
     text-decoration: none;
 }
 
@@ -153,7 +154,7 @@ footer {
 .fxd-pos > * {
     font-weight: bold;
     padding: 5px;
-    color: var(--black);
+    color: var(--primary);
     background-color: var(--main);
     box-shadow: 0 0 10px var(--main);
 }
@@ -168,6 +169,7 @@ footer {
  */
  @media (min-width: 500px) {
     body {
+        background-color: var(--main);
         background-image: url('../../data/imgs/Logo.png');
         background-position:top;
         background-repeat: space;
@@ -178,7 +180,7 @@ footer {
     }
 
     .div-grid {
-        background-color: var(--primary);
+        background-color: var(--main);
     }
 
     .content {
@@ -189,7 +191,7 @@ footer {
         justify-content: space-between;
         align-items: center;
         border: 2px solid var(--primary);
-        background-color: var(--main);
+        background-color: var(--secondary);
         color: var(--white);
         box-shadow: 0 0 20px inset var(--primary);
         border-radius: 25px;
@@ -212,7 +214,7 @@ footer {
         margin-bottom: 25%;
 
         min-height: 100vh;
-        background-color: var(--primary);
+        background-color: var(--secondary);
     }
 
     .content {
@@ -222,9 +224,8 @@ footer {
         padding: 5px;
         position: fixed;
         display: grid;
-        border: 3px solid var(--main);
-        background-color: var(--white);
-        box-shadow: 0 0  20px inset var(--secondary);
+        border: 1px solid var(--secondary);
+        background-color: var(--secondary);
     }
     
     .content ul {
@@ -233,13 +234,15 @@ footer {
         justify-content: space-evenly;
         border-top: 3px solid var(--secondary);
     }
-
+    
     .dash-logo-flex {
         height: 100%;
-        padding: 5px;
+        padding: 15px;
         display: flex;
         justify-content: space-around;
         align-items: center;
+        box-shadow: 0 0  50px inset var(--main);
+        border-radius: 25px;
     }
     
     

@@ -6,7 +6,6 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    border: 3px solid var(--white);
     border-radius: 25px;
 }
 
@@ -41,6 +40,7 @@
     margin: 2%;
     padding: 15px;
     box-shadow: 0 0 10px var(--secondary);
+    background-color: var(--secondary);
 }
 
 
@@ -53,7 +53,7 @@
 
 #login-form label, #signup-form label {
     padding: 5px;
-    background-color: var(--primary);
+    background-color: var(--main);
     border-top-left-radius: 15px;
     border-top-right-radius: 75px;
 }
@@ -61,7 +61,7 @@
 #login-form input, #signup-form input {
     padding: 2px;
     border: 3px solid ;
-    background-color: var(--main);
+    background-color: var(--secondary);
 
 }
 
