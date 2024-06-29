@@ -12,13 +12,11 @@
   <!-- Fixed positions -->
   <div class="fxd-pos">
     <p class="acc-type"><span id="user-type"></span></p>
-    <a href="./changelog.html"><p class="ver">v1.0.0</p></a>
+    <a href="./changelog.html"><p class="ver">v1.1.0</p></a>
   </div>
-  <p>Users: <span id="user-count"></span></p>
 
   <header>
-    <!-- New element to display user count -->
-    <h1><a href="./home.html">< </a></h1> <h1>Settings</h1>
+   <h1><a href="./home.html">< </a></h1> <h1>Settings</h1>
   </header>
 
   <main>
@@ -41,6 +39,7 @@
       <button type="submit">Save Changes</button>
     </form>
     <div id="popup-message" class="popup-message"></div>
+    <p>Total number of users: <span id="user-count"></span></p> <!-- New element to display user count -->
   </main>
 
   <footer>
@@ -110,7 +109,8 @@
     // Function to display user count
     function displayUserCount() {
       const users = JSON.parse(localStorage.getItem('users')) || [];
-      document.getElementById('user-count').textContent = users.length;
+      const uniqueUsers = Array.from(new Set(users.map(user => user.username)));
+      document.getElementById('user-count').textContent = uniqueUsers.length;
     }
 
     // Update user data on form submission
@@ -123,6 +123,12 @@
       const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
       const users = JSON.parse(localStorage.getItem('users')) || [];
       const userIndex = users.findIndex(user => user.username === loggedInUser.username);
+      const usernameExists = users.some(user => user.username === username && user.username !== loggedInUser.username);
+
+      if (usernameExists) {
+        displayPopupMessage('Username already exists. Please choose a different username.', 'error');
+        return;
+      }
 
       if (userIndex !== -1) {
         const confirmPassword = prompt('Please confirm your password to save changes:');
@@ -136,6 +142,7 @@
           localStorage.setItem('users', JSON.stringify(users));
           localStorage.setItem('loggedInUser', JSON.stringify({ username: username, userType: loggedInUser.userType }));
           displayPopupMessage('Settings updated successfully!', 'success');
+          displayUserCount(); // Update user count after changes
         } else {
           displayPopupMessage('Incorrect password. Changes not saved.', 'error');
         }
