@@ -9,12 +9,12 @@
  */
 
 :root {
-    --main: black;
-    --primary: white;
-    --secondary: rgb(16, 185, 185); /* main Color for Theme*/
+    --main: yellow;
+    --primary: red;
+    --secondary: rgb(255, 255, 255); /* main Color for Theme*/
 
     --black: black;
-    --white: white;
+    --white:  white;
     --test: lime;
     --error: red;
 }
@@ -133,7 +133,7 @@ footer {
     justify-content: center;
     width: 100%;
     padding: 10px;
-    background-color: var(--white);
+    background-color: var(--secondary);
     bottom: 0;
     position: fixed;
     box-shadow: 0 0  20px inset var(--secondary);
@@ -192,7 +192,7 @@ footer {
         align-items: center;
         border: 2px solid var(--primary);
         background-color: var(--secondary);
-        color: var(--white);
+        color: var(--primary);
         box-shadow: 0 0 20px inset var(--primary);
         border-radius: 25px;
     }
@@ -203,6 +203,10 @@ footer {
         justify-content: space-between;
         display: flex;
         list-style: none;
+    }
+
+    header {
+        background-color: var(--primary);
     }
 
 }
@@ -253,5 +257,9 @@ footer {
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
+    }
+
+    header {
+        background-color: var(--main);
     }
  }
